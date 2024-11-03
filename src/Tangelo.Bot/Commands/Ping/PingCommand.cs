@@ -1,4 +1,4 @@
-using Discord.Interactions;
+﻿using Discord.Interactions;
 
 namespace Tangelo.Bot.Commands.Ping;
 

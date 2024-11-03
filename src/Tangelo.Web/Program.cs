@@ -1,4 +1,4 @@
-using Tailwind;
+﻿using Tailwind;
 
 var builder = WebApplication.CreateBuilder(args);
 

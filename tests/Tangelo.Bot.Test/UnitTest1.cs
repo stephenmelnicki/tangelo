@@ -1,4 +1,4 @@
-namespace Tangelo.Bot.Test;
+﻿namespace Tangelo.Bot.Test;
 
 [TestClass]
 public class UnitTest1

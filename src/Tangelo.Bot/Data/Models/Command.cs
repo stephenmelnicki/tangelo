@@ -1,4 +1,4 @@
-namespace Tangelo.Bot.Data.Models;
+﻿namespace Tangelo.Bot.Data.Models;
 
 public enum CommandName
 {

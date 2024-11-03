@@ -1,6 +1,6 @@
-using Discord;
-using Discord.WebSocket;
+﻿using Discord;
 using Discord.Interactions;
+using Discord.WebSocket;
 
 namespace Tangelo.Bot.Services;
 
