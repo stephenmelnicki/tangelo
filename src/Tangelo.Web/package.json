@@ -1,0 +1,11 @@
+{
+  "name": "tangelo.web",
+  "scripts": {
+    "tailwind": "cross-env node_modules/.bin/tailwind -i ./wwwroot/css/styles.css -o ./wwwroot/css/styles.min.css --minify",
+    "tailwind:watch": "cross-env node_modules/.bin/tailwind -i ./wwwroot/css/styles.css -o ./wwwroot/css/styles.min.css --minify --watch"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "tailwindcss": "^3.4.14"
+  }
+}

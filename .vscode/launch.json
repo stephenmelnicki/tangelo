@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "name": ".NET Core Launch (bot)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build:bot",
+      "program": "${workspaceFolder}/src/Tangelo.Bot/bin/Debug/net8.0/Tangelo.Bot.dll",
+      "cwd": "${workspaceFolder}/src/Tangelo.Bot",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build:web",
+      "program": "${workspaceFolder}/src/Tangelo.Web/bin/Debug/net8.0/Tangelo.Web.dll",
+      "cwd": "${workspaceFolder}/src/Tangelo.Web",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": "Attach",
+      "type": "coreclr",
+      "request": "attach"
+    }
+  ]
+}

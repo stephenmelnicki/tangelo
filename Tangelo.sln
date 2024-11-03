@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangelo.Web", "src\Tangelo.Web\Tangelo.Web.csproj", "{13274251-6870-4CA0-988C-C3C33D282470}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangelo.Web.Test", "tests\Tangelo.Web.Test\Tangelo.Web.Test.csproj", "{48BB5371-28B7-4897-8208-5FEE2DC83D41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangelo.Bot", "src\Tangelo.Bot\Tangelo.Bot.csproj", "{15302AF5-374A-4660-8864-9D883C4D1552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangelo.Bot.Test", "tests\Tangelo.Bot.Test\Tangelo.Bot.Test.csproj", "{2B5216B8-C55A-4FA3-8630-19391E1D9487}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13274251-6870-4CA0-988C-C3C33D282470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13274251-6870-4CA0-988C-C3C33D282470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13274251-6870-4CA0-988C-C3C33D282470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13274251-6870-4CA0-988C-C3C33D282470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48BB5371-28B7-4897-8208-5FEE2DC83D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BB5371-28B7-4897-8208-5FEE2DC83D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BB5371-28B7-4897-8208-5FEE2DC83D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BB5371-28B7-4897-8208-5FEE2DC83D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15302AF5-374A-4660-8864-9D883C4D1552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15302AF5-374A-4660-8864-9D883C4D1552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15302AF5-374A-4660-8864-9D883C4D1552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15302AF5-374A-4660-8864-9D883C4D1552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5216B8-C55A-4FA3-8630-19391E1D9487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5216B8-C55A-4FA3-8630-19391E1D9487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5216B8-C55A-4FA3-8630-19391E1D9487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5216B8-C55A-4FA3-8630-19391E1D9487}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

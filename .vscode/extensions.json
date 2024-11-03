@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "github.vscode-github-actions",
+    "ms-azuretools.vscode-docker",
+    "ms-dotnettools.csharp",
+    "ms-dotnettools.csdevkit",
+    "ms-dotnettools.vscode-dotnet-runtime"
+  ]
+}

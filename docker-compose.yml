@@ -1,0 +1,78 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    container_name: sqlserver
+    restart: unless-stopped
+    volumes:
+      - ./.sqlserver:/var/opt/mssql/data
+    environment:
+      - ACCEPT_EULA=y
+      - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+    ports:
+      - "1433:1433"
+    networks:
+      - tangelo
+
+  bot:
+    image: tangelo/bot
+    container_name: bot
+    restart: unless-stopped
+    build:
+      context: ./src/Tangelo.Bot
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+    depends_on:
+      - sqlserver
+    networks:
+      - tangelo
+
+  www:
+    image: tangelo/www
+    container_name: www
+    restart: unless-stopped
+    build:
+      context: ./src/Tangelo.Web
+    environment:
+      - DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+    networks:
+      - tangelo
+
+  proxy:
+    image: caddy
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - sqlserver
+      - bot
+      - www
+    networks:
+      - tangelo
+  # certbot:
+  #   image: certbot
+  #   container_name: certbot
+  #   depends_on:
+  #     - proxy
+  #   command: >-
+  #     certonly --reinstall --webroot --webroot-path=/var/www/certbot
+  #     --email ${EMAIL} --agree-tos --no-eff-email
+  #     -d tangelobot.com
+  #   volumes:
+  #     - ./.letsencrypt:/etc/letsencrypt
+  #     - ./.certbot/data:/var/www/certbot
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+
+networks:
+  tangelo:
