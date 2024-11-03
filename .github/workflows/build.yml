@@ -6,9 +6,6 @@ on:
 
   pull_request:
     branches: [main]
-    paths:
-      - "Tangelo.Bot"
-      - "Tangelo.Bot.Test"
 
 jobs:
   build:
