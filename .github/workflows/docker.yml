@@ -30,7 +30,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./src/Tangelo.Bot
-          file: ./Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}/tangelo/bot:latest
 
@@ -59,6 +58,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./src/Tangelo.Web
-          file: ./Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}/tangelo/web:latest
