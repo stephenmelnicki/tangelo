@@ -16,10 +16,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23
+
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
+
+      - name: Install dependencies
+        working-directory: ./src/Tangelo
+        run: npm install
 
       - name: Restore
         run: dotnet restore Tangelo.sln
