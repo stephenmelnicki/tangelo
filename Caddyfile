@@ -2,7 +2,3 @@ localhost {
   encode zstd gzip
   reverse_proxy www:8080
 }
-
-bot.localhost {
-  reverse_proxy bot:8080
-}

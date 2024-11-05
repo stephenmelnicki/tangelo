@@ -9,10 +9,51 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Tangelo.sln",
+        "${workspaceFolder}/src/Tangelo/Tangelo.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "watch",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "watch",
+        "--project",
+        "${workspaceFolder}/src/Tangelo/Tangelo.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "run",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/src/Tangelo/Tangelo.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "publish",
+        "${workspaceFolder}/src/Tangelo/Tangelo.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "group": "build",
       "problemMatcher": "$msCompile"
     },
     {
@@ -21,127 +62,7 @@
       "command": "dotnet",
       "args": [
         "test",
-        "${workspaceFolder}/Tangelo.sln",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "test",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "build:bot",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "build",
-        "${workspaceFolder}/src/Tangelo.Bot/Tangelo.Bot.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "build",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "run:bot",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "run",
-        "--project",
-        "${workspaceFolder}/src/Tangelo.Bot/Tangelo.Bot.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "build",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "watch:bot",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "watch",
-        "--project",
-        "${workspaceFolder}/src/Tangelo.Bot/Tangelo.Bot.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "build",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "publish:bot",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "publish",
-        "${workspaceFolder}/src/Tangelo.Bot/Tangelo.Bot.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "build",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "test:bot",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "test",
-        "${workspaceFolder}/tests/Tangelo.Bot.Test/Tangelo.Bot.Test.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "test",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "build:web",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "build",
-        "${workspaceFolder}/src/Tangelo.Web/Tangelo.Web.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "build",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "watch:web",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "watch",
-        "--project",
-        "${workspaceFolder}/src/Tangelo.Web/Tangelo.Web.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "build",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "publish:web",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "publish",
-        "${workspaceFolder}/src/Tangelo.Web/Tangelo.Web.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "group": "build",
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "test:web",
-      "type": "process",
-      "command": "dotnet",
-      "args": [
-        "test",
-        "${workspaceFolder}/tests/Tangelo.Web.Test/Tangelo.Web.Test.csproj",
+        "${workspaceFolder}/src/Tangelo/Tangelo.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],

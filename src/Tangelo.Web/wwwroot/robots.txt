@@ -1,6 +1,0 @@
-User-agent: *
-DisAllow: /api
-DisAllow: /api/
-
-User-agent: *
-Allow: /

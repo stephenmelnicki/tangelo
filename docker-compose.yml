@@ -13,26 +13,12 @@ services:
     networks:
       - tangelo
 
-  bot:
-    image: ghcr.io/stephenmelnicki/tangelo/bot
-    container_name: bot
-    restart: unless-stopped
-    build:
-      context: ./src/Tangelo.Bot
-    environment:
-      - DISCORD_TOKEN=${DISCORD_TOKEN}
-      - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
-    depends_on:
-      - sqlserver
-    networks:
-      - tangelo
-
   www:
-    image: ghcr.io/stephenmelnicki/tangelo/web
+    image: ghcr.io/stephenmelnicki/tangelo
     container_name: www
     restart: unless-stopped
     build:
-      context: ./src/Tangelo.Web
+      context: ./src/Tangelo
     environment:
       - DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
     networks:
@@ -52,7 +38,6 @@ services:
       - caddy_config:/config
     depends_on:
       - sqlserver
-      - bot
       - www
     networks:
       - tangelo
