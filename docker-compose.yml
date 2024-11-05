@@ -20,7 +20,10 @@ services:
     build:
       context: ./src/Tangelo
     environment:
-      - DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+    depends_on:
+      - sqlserver
     networks:
       - tangelo
 
