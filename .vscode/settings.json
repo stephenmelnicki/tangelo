@@ -1,5 +1,7 @@
 {
-  "css.customData": [".vscode/tailwind.json"],
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "ms-dotnettools.csharp",
   "[dockercompose]": {

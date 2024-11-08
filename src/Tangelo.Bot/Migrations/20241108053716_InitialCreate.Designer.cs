@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Tangelo.Data;
+using Tangelo.Bot.Data;
 
 #nullable disable
 
-namespace Tangelo.Migrations
+namespace Tangelo.Bot.Migrations
 {
     [DbContext(typeof(TangeloContext))]
-    [Migration("20241105050221_InitialCreate")]
+    [Migration("20241108053716_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace Tangelo.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Tangelo.Data.Models.Command", b =>
+            modelBuilder.Entity("Tangelo.Bot.Data.Models.Command", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace Tangelo.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Tangelo.Data.Models.Guild", b =>
+            modelBuilder.Entity("Tangelo.Bot.Data.Models.Guild", b =>
                 {
                     b.Property<decimal>("Id")
                         .HasColumnType("decimal(20,0)");
@@ -62,7 +62,7 @@ namespace Tangelo.Migrations
                     b.ToTable("Guilds");
                 });
 
-            modelBuilder.Entity("Tangelo.Data.Models.Usage", b =>
+            modelBuilder.Entity("Tangelo.Bot.Data.Models.Usage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -95,7 +95,7 @@ namespace Tangelo.Migrations
                     b.ToTable("Usages");
                 });
 
-            modelBuilder.Entity("Tangelo.Data.Models.User", b =>
+            modelBuilder.Entity("Tangelo.Bot.Data.Models.User", b =>
                 {
                     b.Property<decimal>("Id")
                         .HasColumnType("decimal(20,0)");
@@ -109,21 +109,21 @@ namespace Tangelo.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Tangelo.Data.Models.Usage", b =>
+            modelBuilder.Entity("Tangelo.Bot.Data.Models.Usage", b =>
                 {
-                    b.HasOne("Tangelo.Data.Models.Command", "Command")
+                    b.HasOne("Tangelo.Bot.Data.Models.Command", "Command")
                         .WithMany("Usages")
                         .HasForeignKey("CommandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Tangelo.Data.Models.Guild", "Guild")
+                    b.HasOne("Tangelo.Bot.Data.Models.Guild", "Guild")
                         .WithMany("Usages")
                         .HasForeignKey("GuildId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Tangelo.Data.Models.User", "User")
+                    b.HasOne("Tangelo.Bot.Data.Models.User", "User")
                         .WithMany("Usages")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -136,17 +136,17 @@ namespace Tangelo.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Tangelo.Data.Models.Command", b =>
+            modelBuilder.Entity("Tangelo.Bot.Data.Models.Command", b =>
                 {
                     b.Navigation("Usages");
                 });
 
-            modelBuilder.Entity("Tangelo.Data.Models.Guild", b =>
+            modelBuilder.Entity("Tangelo.Bot.Data.Models.Guild", b =>
                 {
                     b.Navigation("Usages");
                 });
 
-            modelBuilder.Entity("Tangelo.Data.Models.User", b =>
+            modelBuilder.Entity("Tangelo.Bot.Data.Models.User", b =>
                 {
                     b.Navigation("Usages");
                 });

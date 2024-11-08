@@ -26,9 +26,16 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build and push (bot)
         uses: docker/build-push-action@v6
         with:
-          context: ./src/Tangelo
+          context: ./src/Tangelo.Bot
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}/bot:latest
+
+      - name: Build and push (web)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./src/Tangelo.Web
+          push: true
+          tags: ghcr.io/${{ github.repository }}/web:latest

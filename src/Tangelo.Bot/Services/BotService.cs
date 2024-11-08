@@ -4,13 +4,13 @@ using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
 
-namespace Tangelo.Services;
+namespace Tangelo.Bot.Services;
 
 public class BotService(
     IConfiguration config,
     IServiceProvider services,
-    ILoggingService loggingService,
-    ITrackingService trackingService,
+    LoggingService loggingService,
+    TrackingService trackingService,
     DiscordSocketClient client,
     InteractionService interactions
 ) : BackgroundService

@@ -13,12 +13,12 @@ services:
     networks:
       - tangelo
 
-  www:
-    image: ghcr.io/stephenmelnicki/tangelo
-    container_name: www
+  bot:
+    image: ghcr.io/stephenmelnicki/tangelo/bot
+    container_name: bot
     restart: unless-stopped
     build:
-      context: ./src/Tangelo
+      context: ./src/Tangelo.Bot
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
       - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
@@ -27,28 +27,14 @@ services:
     networks:
       - tangelo
 
-  proxy:
-    image: caddy
-    container_name: caddy
+  web:
+    image: ghcr.io/stephenmelnicki/tangelo/web
+    container_name: web
     restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      - sqlserver
-      - www
+    build:
+      context: ./src/Tangelo.Web
     networks:
       - tangelo
-
-volumes:
-  caddy_data:
-  caddy_config:
-
 
 networks:
   tangelo:

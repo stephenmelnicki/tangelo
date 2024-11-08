@@ -1,9 +1,9 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
-using Tangelo.Data.Models;
+using Tangelo.Bot.Data.Models;
 
-namespace Tangelo.Data;
+namespace Tangelo.Bot.Data;
 
 public class TangeloContext(IConfiguration configuration) : DbContext
 {

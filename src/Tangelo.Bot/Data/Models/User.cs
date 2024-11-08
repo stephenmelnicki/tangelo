@@ -1,4 +1,4 @@
-﻿namespace Tangelo.Data.Models;
+﻿namespace Tangelo.Bot.Data.Models;
 
 public record User
 {

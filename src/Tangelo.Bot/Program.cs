@@ -2,34 +2,23 @@
 using Discord.Interactions;
 using Discord.WebSocket;
 
-using Tangelo.Data;
-using Tangelo.Services;
+using Tangelo.Bot.Data;
+using Tangelo.Bot.Services;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = Host.CreateApplicationBuilder(args);
 
 builder.Configuration
     .AddUserSecrets<Program>()
     .AddEnvironmentVariables();
 
-builder.Services.AddHealthChecks();
-
-builder.Services.AddRazorPages();
-
 builder.Services
     .AddDbContext<TangeloContext>()
-    .AddSingleton<ILoggingService, LoggingService>()
-    .AddSingleton<ITrackingService, TrackingService>()
+    .AddSingleton<LoggingService>()
+    .AddSingleton<TrackingService>()
     .AddSingleton(new DiscordSocketConfig { GatewayIntents = GatewayIntents.Guilds })
     .AddSingleton<DiscordSocketClient>()
     .AddSingleton(serviceProvider => new InteractionService(serviceProvider.GetRequiredService<DiscordSocketClient>()))
     .AddHostedService<BotService>();
 
-var app = builder.Build();
-
-app.UseStatusCodePages();
-app.UseStaticFiles();
-app.MapRazorPages();
-
-app.MapHealthChecks("/healthz");
-
-app.Run();
+var host = builder.Build();
+host.Run();

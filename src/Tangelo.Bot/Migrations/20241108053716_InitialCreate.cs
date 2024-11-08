@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Tangelo.Migrations
+namespace Tangelo.Bot.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

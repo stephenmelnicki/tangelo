@@ -1,6 +1,6 @@
 ﻿using Discord.Interactions;
 
-namespace Tangelo.Commands.Ping;
+namespace Tangelo.Bot.Commands;
 
 public class PingCommand : InteractionModuleBase<SocketInteractionContext>
 {

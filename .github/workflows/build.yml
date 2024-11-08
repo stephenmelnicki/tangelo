@@ -27,7 +27,7 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: Install dependencies
-        working-directory: ./src/Tangelo
+        working-directory: ./src/Tangelo.Web
         run: npm install
 
       - name: Restore

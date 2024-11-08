@@ -1,9 +1,11 @@
-﻿using Discord;
-using Microsoft.EntityFrameworkCore;
-using Tangelo.Data;
-using Tangelo.Data.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace Tangelo.Services;
+using Discord;
+
+using Tangelo.Bot.Data;
+using Tangelo.Bot.Data.Models;
+
+namespace Tangelo.Bot.Services;
 
 public interface ITrackingService
 {

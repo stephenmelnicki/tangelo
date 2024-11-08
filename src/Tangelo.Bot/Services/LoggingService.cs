@@ -2,16 +2,9 @@
 using Discord.Interactions;
 using Discord.WebSocket;
 
-namespace Tangelo.Services;
+namespace Tangelo.Bot.Services;
 
-public interface ILoggingService
-{
-    Task LogAsync(LogSeverity severity, string source, string message, Exception? exception = null);
-
-    Task LogAsync(LogMessage message);
-}
-
-public class LoggingService : ILoggingService
+public class LoggingService
 {
     private readonly ILogger _logger;
 
