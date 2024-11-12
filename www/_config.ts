@@ -8,6 +8,7 @@ import tailwindConfig from "./tailwind.config.ts";
 const site = lume();
 
 site.copy("static", ".");
+site.copy("deno.json");
 site.copy("server.ts");
 
 site.use(jsx());
