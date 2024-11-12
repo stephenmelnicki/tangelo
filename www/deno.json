@@ -1,0 +1,12 @@
+{
+  "name": "@tangelo/www",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./lume.ts"
+  },
+  "tasks": {
+    "build": "deno run -A lume.ts",
+    "serve": "deno run -A lume.ts -s",
+    "prod": "cd _site && deno run --allow-read --allow-env --allow-net server.ts"
+  }
+}

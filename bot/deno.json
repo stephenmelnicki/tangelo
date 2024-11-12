@@ -1,0 +1,10 @@
+{
+  "name": "@tangelo/bot",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./mod.ts"
+  },
+  "tasks": {
+    "start": "deno run -A --unstable-kv mod.ts"
+  }
+}

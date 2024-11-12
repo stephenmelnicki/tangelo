@@ -1,0 +1,10 @@
+.env
+.DS_Store
+*.sqlite3*
+
+_site
+_cache
+
+generated/
+coverage/
+node_modules/
