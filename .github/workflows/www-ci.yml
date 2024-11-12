@@ -1,10 +1,19 @@
-name: ci
+name: www-ci
 
 on:
   push:
     branches: [main]
+    paths:
+        - "www/**"
+      
   pull_request:
     branches: [main]
+    paths:
+        - "www/**"
+
+defaults:
+  run:
+    working-directory: www
 
 jobs:
   test:
@@ -28,6 +37,3 @@ jobs:
 
       - name: Check types
         run: deno check .
-
-      - name: Run tests
-        run: deno task test

@@ -2,9 +2,19 @@ name: deploy-www
 
 on:
   push:
-    branches: main
+    branches: [main]
+    paths:
+        - "www/**"
+      
   pull_request:
-    branches: main
+    branches: [main]
+    paths:
+        - "www/**"
+
+defaults:
+  run:
+    working-directory: www
+
 
 jobs:
   deploy:
@@ -25,11 +35,11 @@ jobs:
           deno-version: 2.x 
 
       - name: Build step
-        run: deno task www:build
+        run: deno task build
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "tangelo-www"
           entrypoint: "server.ts"
-          root: "www/_site"
+          root: "_site"
