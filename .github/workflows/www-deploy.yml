@@ -42,4 +42,4 @@ jobs:
         with:
           project: "tangelo-www"
           entrypoint: "server.ts"
-          root: "_site"
+          root: "www/_site"
