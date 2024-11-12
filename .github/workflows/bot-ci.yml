@@ -1,0 +1,39 @@
+name: bot-ci
+
+on:
+  push:
+    branches: [main]
+    paths:
+        - "bot/**"
+      
+  pull_request:
+    branches: [main]
+    paths:
+        - "bot/**"
+
+defaults:
+  run:
+    working-directory: bot
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: 2.x
+
+      - name: Verify formatting
+        run: deno fmt --check
+
+      - name: Run linter
+        run: deno lint
+
+      - name: Check types
+        run: deno check .
