@@ -1,12 +1,22 @@
 {
-  "name": "@tangelo/www",
-  "version": "0.0.1",
-  "exports": {
-    ".": "./lume.ts"
-  },
   "tasks": {
     "build": "deno run -A lume.ts",
     "serve": "deno run -A lume.ts -s",
     "prod": "cd _site && deno run --allow-read --allow-env --allow-net server.ts"
+  },
+  "imports": {
+    "tailwindcss": "npm:tailwindcss@^3.4.14",
+    "lume/": "https://deno.land/x/lume@v2.4.2/"
+  },
+  "exclude": [
+    "coverage",
+    "_site"
+  ],
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ],
+    "jsx": "precompile",
+    "jsxImportSource": "npm:preact"
   }
 }

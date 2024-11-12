@@ -1,10 +1,14 @@
 {
-  "name": "@tangelo/bot",
-  "version": "0.0.1",
-  "exports": {
-    ".": "./mod.ts"
-  },
   "tasks": {
     "start": "deno run -A --unstable-kv mod.ts"
-  }
+  },
+  "imports": {
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.2",
+    "@std/log": "jsr:@std/log@^0.224.9",
+    "@std/ulid": "jsr:@std/ulid@^1.0.0",
+    "discord.js": "npm:discord.js@^14.16.3"
+  },
+  "exclude": [
+    "coverage"
+  ]
 }
