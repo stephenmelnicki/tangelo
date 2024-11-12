@@ -13,6 +13,4 @@ site.copy("server.ts");
 site.use(jsx());
 site.use(postcss({ plugins: [tw(tailwindConfig)] }));
 
-site.ignore("README.md");
-
 export default site;
